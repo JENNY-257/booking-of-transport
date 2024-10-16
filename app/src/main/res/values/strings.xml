@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Booking Travel</string>
+    <string name="title">CABITZ</string>
+    <string name="hotel">Hotels</string>
+    <string name="flight">Flights</string>
+    <string name="car">Cars</string>
+    <string name="activity">Activities</string>
+    <string name="packages">Packages</string>
+    <string name="desc">Orbitz Rewards members get more! Earn even more when you book hotels in the app.nUnlock inside prices and exclusive deals</string>
+    <string name="butt">Sign in or Create an account</string>
+    <string name="picks">Staff Picks</string>
+    <string name="package_icon">packages icon</string>
+    <string name="search">Shop Travel</string>
+    <string name="trips">Trips</string>
+    <string name="profile">Account</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

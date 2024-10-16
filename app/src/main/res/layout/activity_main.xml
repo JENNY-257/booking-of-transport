@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#03808080"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/title"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/verticalDivider"
+        android:layout_width="2dp"
+        android:layout_height="158dp"
+        android:layout_marginStart="195dp"
+        android:background="#1F6168"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@id/tableLayout" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="409dp"
+        android:layout_height="235dp"
+        android:layout_marginTop="10dp"
+        android:background="#D0FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+
+
+        >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="40dp"
+                android:src="@drawable/hota" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/hotel"
+                android:textSize="25sp" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="35dp"
+                android:src="@drawable/flight" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/flight"
+                android:textSize="25sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/border"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp">
+
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="40dp"
+                android:src="@drawable/cars" />
+
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/car"
+                android:textSize="25sp" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="35dp"
+                android:src="@drawable/activities" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/activity"
+                android:textSize="25sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_span="2"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp">
+
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="40dp"
+                android:src="@drawable/packages"
+                android:contentDescription="@string/package_icon"/>
+
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="3dp"
+                android:layout_span="1"
+                android:gravity="center"
+                android:text="@string/packages"
+                android:textSize="25sp" />
+        </TableRow>
+
+    </TableLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="15dp"
+        app:cardBackgroundColor="#0288D1"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.756"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
+        android:background="#D0FFFFFF">
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:text="@string/desc" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="152dp">
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:backgroundTint="@color/white"
+                android:text="@string/butt"
+                android:textColor="@color/black" />
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/picks"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        android:textSize="17sp"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageView10"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/hotel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardView"
+        app:shapeAppearanceOverlay="@style/RoundedSquare" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D0FFFFFF"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView10">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            >
+
+            <!-- Search item -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_margin="16dp">
+
+                <ImageView
+                    android:id="@+id/searchIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_search"
+                    android:contentDescription="@string/search" />
+
+                <TextView
+                    android:id="@+id/searchTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/search"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Trips item -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_margin="16dp">
+
+                <ImageView
+                    android:id="@+id/tripsIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_trips"
+                    android:contentDescription="@string/trips" />
+
+                <TextView
+                    android:id="@+id/tripsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/trips"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Account item -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_margin="16dp"
+                >
+
+                <ImageView
+                    android:id="@+id/accountIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_profile"
+                    android:contentDescription="@string/profile" />
+
+                <TextView
+                    android:id="@+id/accountTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/profile"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

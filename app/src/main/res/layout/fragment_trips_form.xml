@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_form"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F4F4"
+    android:padding="16dp"
+    tools:context=".TripsFormFragment">
+
+    <TextView
+
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="124dp"
+        android:text="Book the Car in Your Trip"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextCompanyName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="170dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/edittext_background"
+        android:contentDescription="Editable text field for car company name"
+        android:hint="Car Company Name"
+        android:importantForAccessibility="yes"
+        android:inputType="textCapWords"
+        android:padding="16dp"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTypeOfCar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Car Type Input (typeOfCar) -->
+    <EditText
+        android:id="@+id/editTextTypeOfCar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edittext_background"
+        android:contentDescription="Editable text field for car type"
+        android:hint="Type of Car"
+        android:importantForAccessibility="yes"
+        android:inputType="textCapWords"
+        android:padding="16dp"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextCompanyName" />
+
+    <!-- Year of Manufacture Input -->
+<EditText
+    android:id="@+id/editTextYear"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:hint="Year of Manufacture"
+    android:importantForAccessibility="yes"
+    android:contentDescription="Editable text field for year of manufacture"
+    android:inputType="number"
+    android:maxLength="4"
+    android:background="@drawable/edittext_background"
+    android:padding="16dp"
+    android:textColor="@android:color/black"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/editTextTypeOfCar" />
+
+    <!-- Destination Input -->
+<EditText
+    android:id="@+id/editTextDestination"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:hint="Destination"
+    android:importantForAccessibility="yes"
+    android:contentDescription="Editable text field for trip destination"
+    android:inputType="textCapWords"
+    android:background="@drawable/edittext_background"
+    android:padding="16dp"
+    android:textColor="@android:color/black"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/editTextYear" />
+
+    <!-- Number of Seats Input -->
+    <EditText
+        android:id="@+id/editTextNumberOfSeats"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Number of Seats"
+        android:importantForAccessibility="yes"
+        android:contentDescription="Editable text field for number of seats"
+        android:inputType="number"
+        android:background="@drawable/edittext_background"
+        android:padding="16dp"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextDestination" />
+
+        <!-- Available for Trips Checkbox -->
+    <CheckBox
+        android:id="@+id/checkBoxAvailable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Available for Trips"
+        android:importantForAccessibility="yes"
+        android:contentDescription="Check if car is available for trips"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextNumberOfSeats" />
+
+        <!-- Submit Button -->
+    <Button
+        android:id="@+id/buttonSubmit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        android:text="Submit"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/blue"
+        android:contentDescription="Submit the car details"
+        android:background="@drawable/button_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkBoxAvailable" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/toobar"
+        app:layout_constraintBottom_toTopOf="@+id/textViewTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
