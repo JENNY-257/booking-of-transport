@@ -3,15 +3,27 @@ package com.example.bookingtravel.model;
 import java.io.Serializable;
 
 public class Car implements Serializable {
+
+    private int id;  // New field to store the database ID
     private String companyName;
-    private String typeOfCar;  // Replaced model with typeOfCar
+    private String typeOfCar;
     private int year;
     private boolean isAvailable;
     private String destination;
     private int numberOfSeats;
 
-    // Constructor, Getters, and Setters here
+    // Constructor with ID (for retrieval from the database)
+    public Car(int id, String companyName, String typeOfCar, int year, boolean isAvailable, String destination, int numberOfSeats) {
+        this.id = id;
+        this.companyName = companyName;
+        this.typeOfCar = typeOfCar;
+        this.year = year;
+        this.isAvailable = isAvailable;
+        this.destination = destination;
+        this.numberOfSeats = numberOfSeats;
+    }
 
+    // Constructor without ID (for new car entries)
     public Car(String companyName, String typeOfCar, int year, boolean isAvailable, String destination, int numberOfSeats) {
         this.companyName = companyName;
         this.typeOfCar = typeOfCar;
@@ -22,6 +34,14 @@ public class Car implements Serializable {
     }
 
     // Getters and setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getCompanyName() {
         return companyName;
     }

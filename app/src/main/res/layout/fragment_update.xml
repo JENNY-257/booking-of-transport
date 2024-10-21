@@ -1,0 +1,81 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="@android:color/white">
+
+    <EditText
+        android:id="@+id/editCompanyName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Company Name"
+        android:backgroundTint="@color/black"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/editType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Type"
+        android:backgroundTint="@color/black"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/editYear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Year"
+        android:backgroundTint="@color/black"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp"
+        android:textSize="16sp"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/editDestination"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Destination"
+        android:backgroundTint="@color/black"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/editSeats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Number of Seats"
+        android:backgroundTint="@color/black"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp"
+        android:textSize="16sp"
+        android:inputType="number" />
+
+    <CheckBox
+        android:id="@+id/checkBoxIsAvailable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Is Available?"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="12dp"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>

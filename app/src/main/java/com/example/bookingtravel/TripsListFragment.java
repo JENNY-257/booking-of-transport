@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,25 +12,33 @@ import androidx.fragment.app.Fragment;
 
 import com.example.bookingtravel.model.Car;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TripsListFragment extends Fragment {
 
-    private Car car;
+    private List<Car> carList;
+    private ListView listView;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_trips_list, container, false);
 
-        // Get the passed Car data
+        listView = view.findViewById(R.id.listViewTrips);
+        carList = new ArrayList<>();
+
+        // Get the passed Car object from arguments
         if (getArguments() != null) {
-            car = (Car) getArguments().getSerializable("car");
+            Car car = (Car) getArguments().getSerializable("car");
+            if (car != null) {
+                carList.add(car); // Add the car to the list
+            }
         }
 
-        // Display the Car information (You can display this in a RecyclerView or TextView)
-        if (car != null) {
-            TextView carInfo = view.findViewById(R.id.textViewCarInfo); // Add a TextView in your layout
-            carInfo.setText("Car: " + car.getCompanyName() + " " + car.getTypeOfCar() + ", Year: " + car.getYear() + ", Available: " + (car.isAvailable() ? "Yes" : "No"));
-        }
+        // Set up the adapter with the car list
+        TripsAdapter adapter = new TripsAdapter(getActivity(), carList);
+        listView.setAdapter(adapter);
 
         return view;
     }

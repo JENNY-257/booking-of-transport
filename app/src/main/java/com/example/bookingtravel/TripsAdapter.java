@@ -1,64 +1,38 @@
 package com.example.bookingtravel;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bookingtravel.model.Car;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class TripsAdapter extends RecyclerView.Adapter<TripsAdapter.TripsViewHolder> {
+public class TripsAdapter extends ArrayAdapter<Car> {
 
-    private List<Car> carList = new ArrayList<>();
-
-    // Method to add a car to the list and notify adapter
-    public void addCar(Car car) {
-        carList.add(car);
-        notifyDataSetChanged(); // Notify that data has changed
-    }
-
-    @NonNull
-    @Override
-    public TripsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_trip, parent, false); // Inflate your custom layout for list item
-        return new TripsViewHolder(view);
+    public TripsAdapter(Context context, List<Car> cars) {
+        super(context, 0, cars);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TripsViewHolder holder, int position) {
-        Car car = carList.get(position);
-        holder.bind(car); // Bind data to the view
-    }
-
-    @Override
-    public int getItemCount() {
-        return carList.size();
-    }
-
-    // ViewHolder class to hold individual trip data views
-    static class TripsViewHolder extends RecyclerView.ViewHolder {
-        private TextView carDetailsTextView;
-
-        public TripsViewHolder(@NonNull View itemView) {
-            super(itemView);
-            carDetailsTextView = itemView.findViewById(R.id.carDetails);
+    public View getView(int position, View convertView, ViewGroup parent) {
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext())
+                    .inflate(R.layout.item_trip, parent, false);
         }
 
-        public void bind(Car car) {
-            // Display car data in the TextView
-            String carDetails = "Make: " + car.getCompanyName() + "\n" +
-                    "Model: " + car.getTypeOfCar() + "\n" +
-                    "Year: " + car.getYear() + "\n" +
-                    "Destination: " + car.getDestination() + "\n" +
-                    "Available: " + (car.isAvailable() ? "Yes" : "No");
-            carDetailsTextView.setText(carDetails);
+        Car car = getItem(position);
+
+        TextView carDetails = convertView.findViewById(R.id.carDetails);
+        if (car != null) {
+            carDetails.setText("Car: " + car.getCompanyName() + " " + car.getTypeOfCar() +
+                    ", Year: " + car.getYear() + ", Seats: " + car.getNumberOfSeats());
         }
+
+        return convertView;
     }
+
 }
