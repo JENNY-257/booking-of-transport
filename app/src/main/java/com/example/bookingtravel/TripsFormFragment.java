@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.fragment.app.Fragment;
@@ -38,7 +39,7 @@ public class TripsFormFragment extends Fragment {
         EditText editTextNumberOfSeats = view.findViewById(R.id.editTextNumberOfSeats);
         CheckBox checkBoxAvailable = view.findViewById(R.id.checkBoxAvailable);
         Button buttonSubmit = view.findViewById(R.id.buttonSubmit);
-        ImageButton imageButton = view.findViewById(R.id.imageButton2);
+        ImageView imageButton = view.findViewById(R.id.imageButton2);
 
         imageButton.setOnClickListener(imageView -> {
             Intent intent = new Intent(getActivity(), TabbedActivity.class);
@@ -67,11 +68,8 @@ public class TripsFormFragment extends Fragment {
 
             // Confirm the operation
             showToast("Car saved successfully!", true);
-
-            // Notify FragmentsActivity about the new car data
-            if (getActivity() instanceof OnCarDataSubmitListener) {
-                ((OnCarDataSubmitListener) getActivity()).onCarDataSubmit(car);
-            }
+            clearForm(editTextCompanyName, editTextTypeOfCar, editTextYear, editTextDestination, editTextNumberOfSeats);
+            checkBoxAvailable.setChecked(false);
         });
 
         return view;
@@ -122,6 +120,15 @@ public class TripsFormFragment extends Fragment {
 
         return true;
     }
+
+    private void clearForm(EditText... fields) {
+        // Reset all EditText fields to empty
+        for (EditText field : fields) {
+            field.setText("");
+        }
+    }
+
+
     // Helper method to show a toast message
     private void showToast(String message, boolean isSuccess) {
         Toast toast = new Toast(getActivity());

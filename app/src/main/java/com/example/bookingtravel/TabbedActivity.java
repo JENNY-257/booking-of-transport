@@ -68,12 +68,13 @@ public class TabbedActivity extends AppCompatActivity {
                     tab.setContentDescription("Cars Tab"); // Set content description for accessibility
                     break;
                 case 1:
-                    tab.setText("Other");
+                    tab.setText("Other Cars");
                     tab.setContentDescription("Other Tab"); // Set content description for accessibility
                     break;
             }
         }).attach();
     }
+
     public void replaceWithFragmentUpdate(Car car) {
         FragmentUpdate fragmentUpdate = FragmentUpdate.newInstance(car);
         getSupportFragmentManager().beginTransaction()

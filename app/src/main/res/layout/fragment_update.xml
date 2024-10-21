@@ -1,81 +1,95 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/IupdateId"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     android:orientation="vertical"
     android:padding="24dp"
-    android:gravity="center"
-    android:background="@android:color/white">
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update the Car Info"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
+        android:letterSpacing="0.1" />
 
     <EditText
         android:id="@+id/editCompanyName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Company Name"
-        android:backgroundTint="@color/black"
-        android:padding="12dp"
         android:layout_marginBottom="12dp"
+        android:hint="Company Name"
+        android:background="@drawable/edit_text_background"
+        android:padding="16dp"
         android:textSize="16sp" />
 
     <EditText
         android:id="@+id/editType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Type"
-        android:backgroundTint="@color/black"
-        android:padding="12dp"
         android:layout_marginBottom="12dp"
+        android:hint="Type"
+        android:background="@drawable/edit_text_background"
+        android:padding="16dp"
         android:textSize="16sp" />
 
     <EditText
         android:id="@+id/editYear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Year"
-        android:backgroundTint="@color/black"
-        android:padding="12dp"
         android:layout_marginBottom="12dp"
-        android:textSize="16sp"
-        android:inputType="number" />
+        android:hint="Year"
+        android:inputType="number"
+        android:background="@drawable/edit_text_background"
+        android:padding="16dp"
+        android:textSize="16sp" />
 
     <EditText
         android:id="@+id/editDestination"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Destination"
-        android:backgroundTint="@color/black"
-        android:padding="12dp"
         android:layout_marginBottom="12dp"
+        android:hint="Destination"
+        android:background="@drawable/edit_text_background"
+        android:padding="16dp"
         android:textSize="16sp" />
 
     <EditText
         android:id="@+id/editSeats"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Number of Seats"
-        android:backgroundTint="@color/black"
-        android:padding="12dp"
         android:layout_marginBottom="12dp"
-        android:textSize="16sp"
-        android:inputType="number" />
+        android:hint="Number of Seats"
+        android:inputType="number"
+        android:background="@drawable/edit_text_background"
+        android:padding="16dp"
+        android:textSize="16sp" />
 
     <CheckBox
         android:id="@+id/checkBoxIsAvailable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
         android:text="Is Available?"
         android:textSize="16sp"
-        android:layout_marginBottom="16dp" />
+        android:textColor="@android:color/black" />
 
     <Button
         android:id="@+id/btnUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Update"
-        android:textSize="16sp"
-        android:textColor="@android:color/white"
+        android:layout_gravity="center_horizontal"
         android:backgroundTint="@android:color/holo_blue_light"
-        android:paddingHorizontal="24dp"
+        android:paddingHorizontal="32dp"
         android:paddingVertical="12dp"
-        android:layout_gravity="center_horizontal" />
+        android:text="Update"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:elevation="4dp" />
+
 </LinearLayout>

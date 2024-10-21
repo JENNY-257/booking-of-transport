@@ -85,9 +85,12 @@ public class FragmentUpdate extends Fragment {
             requireActivity().getSupportFragmentManager().popBackStack();
             ((TabbedActivity) requireActivity()).showTabbedView();
         });
+
         // Return to the previous fragment
 //            getParentFragmentManager().popBackStack();
 
         return view;
+
     }
+
 }

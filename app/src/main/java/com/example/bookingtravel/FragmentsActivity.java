@@ -1,6 +1,8 @@
 package com.example.bookingtravel;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -14,9 +16,9 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.bookingtravel.callbacks.OnCarDataSubmitListener;
 import com.example.bookingtravel.model.Car;
 
-public class FragmentsActivity extends AppCompatActivity implements OnCarDataSubmitListener {
+public class FragmentsActivity extends AppCompatActivity  {
     private TripsListFragment tripsListFragment;
-
+    private Button navigateButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +34,12 @@ public class FragmentsActivity extends AppCompatActivity implements OnCarDataSub
         if (savedInstanceState == null) {
             loadTripsFormFragment();
         }
+
+        // Setup button to navigate to TripsListFragment
+        navigateButton = findViewById(R.id.navigateButton);
+        navigateButton.setOnClickListener(v -> {
+            loadTripsListFragment();
+        });
     }
 
     private void loadTripsFormFragment() {
@@ -42,25 +50,16 @@ public class FragmentsActivity extends AppCompatActivity implements OnCarDataSub
         fragmentTransaction.commit();
     }
 
-    @Override
-    public void onCarDataSubmit(Car car) {
-        // Create a new instance of TripsListFragment
+    private void loadTripsListFragment() {
         TripsListFragment tripsListFragment = new TripsListFragment();
-
-        // Pass the new car data to the list fragment using Bundle
-        Bundle args = new Bundle();
-        args.putSerializable("car", car);
-        tripsListFragment.setArguments(args);
-
-        // Switch to the TripsListFragment when data is submitted
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragment_container, tripsListFragment);
-        transaction.addToBackStack(null); // Allow back navigation to form
-        transaction.commit();
-
-        // Show a confirmation Toast message
-        Toast.makeText(this, "Car submitted: " + car.getCompanyName() + " " + car.getTypeOfCar() +
-                " with " + car.getNumberOfSeats() + " seats", Toast.LENGTH_SHORT).show();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, tripsListFragment); // Replace with your container's ID
+        fragmentTransaction.addToBackStack(null); // Optional: Add to back stack to allow back navigation
+        fragmentTransaction.commit();
+        navigateButton.setVisibility(View.GONE);
     }
+
+
 
 }
