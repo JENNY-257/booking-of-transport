@@ -42,7 +42,7 @@ public class FragmentsActivity extends AppCompatActivity  {
         });
     }
 
-    private void loadTripsFormFragment() {
+    public void loadTripsFormFragment() {
         TripsFormFragment tripsFormFragment = new TripsFormFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -59,6 +59,7 @@ public class FragmentsActivity extends AppCompatActivity  {
         fragmentTransaction.commit();
         navigateButton.setVisibility(View.GONE);
     }
+
 
 
 

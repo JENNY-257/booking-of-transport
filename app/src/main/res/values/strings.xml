@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Booking Travel</string>
+    <string name ="back_button">back to fragment activity</string>
+    <string name="next_button">Go to the network activity</string>
     <string name="title">CABITZ</string>
     <string name="hotel">Hotels</string>
     <string name="flight">Flights</string>

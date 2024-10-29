@@ -1,13 +1,18 @@
 package com.example.bookingtravel;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 
 import com.example.bookingtravel.model.Car;
 
@@ -33,7 +38,20 @@ public class TripsListFragment extends Fragment {
         // Set up the adapter with the static car list
         TripsAdapter adapter = new TripsAdapter(getActivity(), carList);
         listView.setAdapter(adapter);
+        ImageButton backButton = view.findViewById(R.id.back_button_icon);
+        backButton.setOnClickListener(v -> {
+            // Navigate back to the FragmentsActivity
+            Intent intent = new Intent(getActivity(), FragmentsActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK); // Clear the stack
+            startActivity(intent);
+//            getActivity().finish(); // Optional: Finish the current activity
+        });
 
+        ImageButton nextButton = view.findViewById(R.id.next_button_icon);
+        nextButton.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), NetworkActivity.class);
+            startActivity(intent);
+        });
         return view;
     }
 

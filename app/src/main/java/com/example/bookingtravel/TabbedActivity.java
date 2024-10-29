@@ -2,6 +2,7 @@ package com.example.bookingtravel;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -73,6 +74,8 @@ public class TabbedActivity extends AppCompatActivity {
                     break;
             }
         }).attach();
+        ImageButton backButton = findViewById(R.id.back_button_bt);
+        backButton.setOnClickListener(v -> finish());
     }
 
     public void replaceWithFragmentUpdate(Car car) {
